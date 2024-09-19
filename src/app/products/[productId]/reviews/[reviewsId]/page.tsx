@@ -1,4 +1,5 @@
 import React from 'react'
+import NotFound from './not-found'
 
 const Review = ({params}:{
     params:{
@@ -7,8 +8,14 @@ const Review = ({params}:{
     }
 }) => {
   return (
-    <div><h1>
+    <>
+    { parseInt(params.reviewsId) > 1000 ? <NotFound />:
+        <div><h1>
        Review {params.reviewsId} for Product {params.productId}</h1></div>
+    }
+    </>
+    
+    
   )
 }
 
